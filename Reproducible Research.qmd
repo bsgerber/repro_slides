@@ -1,0 +1,352 @@
+---
+title: "Reproducible Research with R"
+subtitle: "(Presentation Created using R/Quarto)"
+author: "Ben Gerber"
+format: 
+  revealjs:
+    slide-number: true
+    theme: sky
+    scrollable: true
+editor: visual
+---
+
+## Reproducible Workflow
+
+[Watch the Video](https://www.youtube.com/watch?v=s3JldKoA0zw)
+
+## Definitions
+
+*Reproducibility*, *replicability* and *repeatability* are related terms used by research communities referring to:
+
+1.  the ability to re-run analyses or computational methods and get consistent or identical results (computational)
+
+2.  the ability to re-run a study's methodology and get consistent results from running a new study by following procedures as closely as possible (experimental)
+
+::: footer
+Source: [National Library of Medicine](https://nnlm.gov/guides/data-glossary/reproducibility)
+:::
+
+## Reproducibility Crisis
+
+![](Reproducible%20Research_files/figures/replication_effect_size_border.jpeg){fig-align="center"}
+
+::: footer
+Source: [Estimating the reproducibility of psychological science](https://www.science.org/doi/10.1126/science.aac4716)
+:::
+
+## Why Do Reproducible Research?
+
+-   Public Good (Transparency)
+-   Good for Your Future Self
+-   Increasingly, journals require this
+-   Recommended or expected by funding agencies
+
+## NIH Requirement for Data Management and Sharing Policy (2023)
+
+-   Data openly available for view and reuse
+-   Require Data Management and Sharing Plan
+-   Includes data storage, access, preservation, metadata, and distribution
+-   Timeline: no later than associated publication or end of performance period (whichever comes first)
+
+::: footer
+Source: [NIH](https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)
+:::
+
+## Research Cycle
+
+![](Reproducible%20Research_files/figures/research_cycle.jpeg){fig-align="center"}
+
+::: footer
+Source: [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/overview.html)
+:::
+
+## DMPTool
+
+![](Reproducible%20Research_files/figures/dmp_tool_screen_cap.png){fig-align="center"}
+
+::: footer
+Source: [DMPTool](https://dmptool.org/)
+:::
+
+## Data Sharing as UMass (1)
+
+[eScholarship\@UMassChan](https://escholarship.umassmed.edu/) can serve as a home for research data files 
+
+-   support scholarly publications (dissertations, theses, and journal articles)
+-   meet requirements for preservation/dissemination
+-   free, managed by the library
+-   large file sizes, many file formats
+-   embargoes for access
+
+## Data Sharing at UMass (2)
+
+Also:
+
+-   persistent identifier (DOI)
+-   Creative Commons license
+-   usage metrics (research impact)
+-   metadata for discovery and reuse
+-   another copy (just in case!)
+
+Or see [NIH-supported data repositories](https://www.nlm.nih.gov/NIHbmic/nih_data_sharing_repositories.html)
+
+## FAIR Principles
+
+![](Reproducible%20Research_files/figures/FAIR-principles.png){fig-align="center"}
+
+-   **F**indable (unique/persistent DOI? registered in searchable resource?)
+-   **A**ccessible (protocol open and free?)
+-   **I**nteroperable (\[meta\]data use formal, accessible, shared, broadly applicable language?)
+-   **R**eusable (\[meta\]data richly described with attributes, associated with provenance)
+
+::: footer
+Source: [go-fair.org](https://www.go-fair.org/fair-principles/)
+:::
+
+## Metadata
+
+Answer the following questions and document:
+
+For measures: the Who, What, When, Where, Why, and How?
+
+-   How is the data structured?
+-   Why was the data collected?
+-   Who should get credit for this data (researcher AND funding agency)?
+-   How can this data be reused (licensing)?
+
+## Reproducibility Spectrum
+
+![](Reproducible%20Research_files/figures/reproducibility_spectrum.jpeg){fig-align="center"}
+
+::: footer
+Source: [Peng RD. Reproducible research in computational science. Science. 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3383002/)
+:::
+
+## Don't Use Excel
+
+In 2020, the UK COVID tracing program "lost" thousands of COVID cases when Excel ran out of rows. Data in csv format were imported into xls templates, which are limited to 65,536 rows. Any extra data rows were silently discarded.
+
+-   Someone eventually noticed that they were receiving exactly 65,536 rows every day, 8 days in a row.
+-   15,480 additional cases of COVID-19 were not traced during those 8 days. Contacts were not tested or notified.
+
+::: footer
+Source: [BBC News](https://www.bbc.com/news/technology-54423988)
+:::
+
+## Geek vs. Non-Geek
+
+![](Reproducible%20Research_files/figures/geek_non_geek.png){fig-align="center"}
+
+## Reproducible Workflow
+
+![](Reproducible%20Research_files/figures/reproducible_workflow.png){fig-align="center"}
+
+::: footer
+Source: [A Reproducible Data Analysis Workflow](https://qcmb.psychopen.eu/index.php/qcmb/article/view/3763/3763.html)
+:::
+
+## Github
+
+![](Reproducible%20Research_files/figures/github_rstudio.jpeg){fig-align="center"}
+
+## Packages
+
+-   *docker* - lock down working environment with a Docker image (resistant to change in OS, R, packages, etc.)
+-   *drake* - rebuilds intermediate data objects when dependencies change and provides visualizations
+-   *rrtools* - instructions, templates, and functions for making compendia for articles/reports
+-   *repo* - store R data files in central local repository with tags, annotations, provenance and dependence
+
+## Compendia
+
+::: panel-tabset
+### Small
+
+![](Reproducible%20Research_files/figures/small_compendia.png){fig-align="center"}
+
+### Medium
+
+![](Reproducible%20Research_files/figures/medium_compendia.png){fig-align="center"}
+
+### Large
+
+![](Reproducible%20Research_files/figures/large_compendia.png){fig-align="center"}
+:::
+
+::: footer
+Source: [rrtools for Reproducible Research in R](https://github.com/benmarwick/rrtools)
+:::
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation.
+
+::: {layout-ncol="2"}
+![](Reproducible%20Research_files/figures/hello_quarto.png)
+
+![](Reproducible%20Research_files/figures/rstudio_qmd_how_it_works.png)
+:::
+
+::: footer
+Source: [Quarto](https://quarto.org/)
+:::
+
+## Frank Harrel's Guide to R Workflow
+
+::: footer
+Source: [Frank Harrell's R Workflow](https://hbiostat.org/rflow/)
+:::
+
+## Tables with gtsummary
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| results: asis
+
+library(dplyr)
+library(gtsummary)
+
+tab1 <- trial %>%
+  dplyr::select(trt, age, marker) %>%
+  tbl_summary(by = trt)
+
+tab1 %>%
+  as_gt()
+```
+
+An inline text example: The median (IQR) marker level in the Drug A and Drug B groups are `r inline_text(tab1, variable = marker, column = "Drug A")` and `r inline_text(tab1, variable = marker, column = "Drug B")`, respectively.
+
+## Automated CONSORT
+
+```{r}
+library(devtools)
+#install_github("bsgerber/ggconsort@370cb7119db5c8c2d63c737091a6b832194e899f")
+source_url("https://raw.githubusercontent.com/bsgerber/ggconsort/diagrammer/consort_diagrammer.R")
+source_url("https://raw.githubusercontent.com/bsgerber/ggconsort/master/create_status_tables.R")
+```
+
+::: panel-tabset
+### Data
+
+```{r}
+head(status3)
+```
+
+### CONSORT
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+make_consort(status3)
+```
+:::
+
+::: footer
+Source 1: [ggconsort](https://github.com/tgerke/ggconsort)
+Source 2: [Ben's ggconsort](https://github.com/bsgerber/ggconsort/tree/diagrammer)
+:::
+
+## Example R Markdown Reports and Apps
+
+-   Example study provided participants with letters regarding their sleep data
+-   Tracking spreadsheet of community health worker activities (via REDCap API)
+-   Shiny app with maps displaying opioid use by region deployed on web
+
+## Manuscripts with R Markdown
+
+![](Reproducible%20Research_files/figures/manuscript2.png){fig-align="center"}
+
+::: footer
+Example: [Write Manuscript in R](https://www.ds-econ.com/write-your-whole-paper-in-r-it-is-better/)
+:::
+
+## Plots with Real-time Data
+
+```{r, echo = FALSE, message = FALSE, dpi = 300, fig.height = 4}
+
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(scales)
+
+covid_cases <- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv")
+
+pivot_longer(covid_cases, 12:length(covid_cases), names_to = "date", values_to = "cases") %>%
+  mutate(date = as_date(date, format = "%m/%d/%y")) %>%
+  filter(Province_State %in% c("Massachusetts", "Illinois"),
+         cases > 0) %>%
+  group_by(Province_State, date) %>%
+  mutate(cases = sum(cases)) %>%
+  ungroup() %>%
+  ggplot(aes(x = date, y = cases, color = Province_State, group = Province_State)) +
+    geom_line() + 
+    scale_x_date(breaks = scales::breaks_pretty(n = 8)) +
+    scale_y_continuous(labels = unit_format(unit = "k", sep = "", big.mark = ",", scale = 1/1000)) +
+    labs(
+      title = "Total COVID-19 cases by state",
+      x = "", y = "",
+      caption = paste0("Image generated: ", Sys.time(), "\n", "Data source: https://github.com/CSSEGISandData/COVID-19", "\n", "COVID-19 Data Repository by CSSE at Johns Hopkins University")
+    ) + 
+    theme_classic()
+```
+
+## Code Versioning 1
+
+![xkcd](Reproducible%20Research_files/figures/version_control.jpeg){fig-align="center"}
+
+## Code Versioning 2
+
+![PhD Comics](Reproducible%20Research_files/figures/final_doc.jpeg){fig-align="center"}
+
+## File Naming
+
+![PhD Comics](Reproducible%20Research_files/figures/story_told_filenames.png){fig-align="center"}
+
+## The Whole Tale
+
+Whole Tale is an NSF-funded Data Infrastructure Building Block (DIBBS) initiative to build a scalable, open source, web-based, multi-user platform for reproducible research.
+
+"tales" are executable research objects that capture data, code, and the complete software environment used to produce research findings.
+
+![](Reproducible%20Research_files/figures/whole_tale_diagram.png){fig-align="center"}
+
+::: footer
+Source: [Whole Tale](https://wholetale.org/)
+:::
+
+## Preparing and Reporting Statistical Code
+
+-   Write for others to understand and for you and your team to save
+-   Value clarity over brevity
+-   Annotate the code's purpose and structure
+-   Add English pseudocode to explain the purpose of each step
+-   Embed supporting technical references
+
+::: footer
+Source: [Localio AR, et al. Statistical Code to Support the Scientific Story. Ann Intern Med. 2018](https://www.acpjournals.org/doi/10.7326/M17-3431)
+:::
+
+## Checklist
+
+-   Think through the entire process - will everything be reproducible?
+-   Is the data cleaning, manipulation, analysis automated?
+-   Is there use of version control? Are prior versions easily seen?
+-   How is software, hardware, operating systems, and library versions tracked?
+
+## Resources
+
+1.  [Happy git with R](https://github.com/jennybc/happy-git-with-r)
+2.  [R Studio Webinars](https://www.rstudio.com/resources/webinars/)
+3.  [NCEAS Courses](https://www.nceas.ucsb.edu/learning-hub)
+4.  [R Markdown](https://bookdown.org/yihui/rmarkdown/)
+5.  [Quarto](https://quarto.org/)
+6.  [R/Medicine - Aug. 23-26](https://events.linuxfoundation.org/r-medicine/)
+7.  [RWeekly.org](https://rweekly.org/)
+8.  [R Workflow](https://hbiostat.org/rflow/)
+
+## R Café
+
+![Tess Grynoch and Ben Gerber](Reproducible%20Research_files/figures/r_cafe_logo_smaller.png){fig-align="center"}
+
+## Thank you!
